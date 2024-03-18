@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "e22db0d3-1a6e-42e8-8df4-28753dd6878e",
+		"name": "Consulta Adres Proveedores",
+		"description": "Esto es para la API de la evaluación",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5600375"
+	},
+	"item": [
+		{
+			"name": "Consultar Proveedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Proveedores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores?nombre=Laboratorios Nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Laboratorios Nuevo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Individual Proveedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Porveedores",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores/1?nombre=Laboratorios Bayer S.A.",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores",
+						"1"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Laboratorios Bayer S.A."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Proveedores",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurar Proveedores Eliminados",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/proveedores/2/restore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"proveedores",
+						"2",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "b064db4c-184b-445a-9469-79af5c5de762",
+		"name": "Consulta Adres Tipos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5600375"
+	},
+	"item": [
+		{
+			"name": "Consultar Tipos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Tipos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos?nombre=Consulta medica&categoria=Servicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Consulta medica"
+						},
+						{
+							"key": "categoria",
+							"value": "Servicio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Tipos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos/500?nombre=Medicamentos&categoria=Servicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos",
+						"500"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Medicamentos"
+						},
+						{
+							"key": "categoria",
+							"value": "Servicio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Individual Tipos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurar Tipos Eliminados",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos/1/restore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos",
+						"1",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Tipos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tipos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tipos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

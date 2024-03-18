@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "51370c47-4943-4b42-8380-ac176dc85a1a",
+		"name": "Consulta adres Unidades",
+		"description": "Esto es para la API de la evaluación",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5600375"
+	},
+	"item": [
+		{
+			"name": "Consultar Unidades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Unidades",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades?nombre=Dirección de Medicamentos y Tecnologías en Salud",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Dirección de Medicamentos y Tecnologías en Salud"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Individual Unidades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Unidades",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades/500?nombre=Area de Sistemas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades",
+						"500"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Area de Sistemas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Unidades",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurar Unidades Eliminados",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/unidades/1/restore",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"unidades",
+						"1",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
