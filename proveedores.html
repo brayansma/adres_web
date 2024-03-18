@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Adres Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" href="./vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="shortcut icon" href="./images/favicon.png" />
+  <link href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/autofill/2.7.0/css/autoFill.dataTables.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/colreorder/2.0.0/css/colReorder.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/datetime/1.5.2/css/dataTables.dateTime.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/fixedcolumns/5.0.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/scroller/2.4.1/css/scroller.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/searchbuilder/1.7.0/css/searchBuilder.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container-scroller d-flex">
+    <!-- partial:./partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item sidebar-category">
+          <p>ADRES</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">
+            <i class="mdi mdi-view-quilt menu-icon"></i>
+            <span class="menu-title">Inicio</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="adquisiciones.html" >
+            <i class="mdi mdi-view-headline menu-icon"></i>
+            <span class="menu-title">Adquisiciones</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="proveedores.html" >
+            <i class="mdi mdi-account menu-icon"></i>
+            <span class="menu-title">Proveedores</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="unidad.html" >
+            <i class="mdi mdi mdi mdi-sitemap  menu-icon"></i>
+            <span class="menu-title">Unidad</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tipos.html" >
+            <i class="mdi mdi mdi-eraser menu-icon"></i>
+            <span class="menu-title">Tipos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="informes.html" >
+            <i class="mdi mdi-grid-large menu-icon"></i>
+            <span class="menu-title">Informes</span>
+          </a>
+        </li>
+        <li class="nav-item sidebar-category">
+          <p>Paginas</p>
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" >
+            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+            <span class="menu-title">Documentación</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <button class="btn bg-danger btn-sm menu-title">Brahyan Marquez</button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:./partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 px-0 py-0 py-lg-4 d-flex flex-row">
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <div class="navbar-brand-wrapper">
+            <a class="navbar-brand brand-logo" href="./index.html"><img src="./images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="./index.html"><img src="./images/logo-mini.svg"
+                alt="logo" /></a>
+          </div>
+          <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1 letra_titulo">Bienvenido a Adres, ​​​​​​​​​​​​​​​La
+            Administradora de ​los Recursos del Sistema General de Seguridad Social en Salud</h4>
+            
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div id="contenedor"></div>
+          <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Proveedores</h4>
+                  <p class="card-description">
+                    Este formulario permite Guardar y Actualizar 
+                  </p>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label>Codigo</label>
+                      <input type="text" disabled class="form-control form-control-sm" id="codigo" placeholder="Codigo"
+                        aria-label="Codigo">
+                    </div>
+                    <div class="form-group">
+                      <label>Nombre</label>
+                      <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre"
+                        aria-label="Nombre">
+                    </div>
+                    
+                    <button type="button" id="guardar" class="btn btn-success me-2 ">Guardar</button>
+                    <button type="button" id="modificar" class="btn btn-primary me-2 ">Modificar</button>
+                    <button type="button" id="limpiar" class="btn btn-warning">Limpiar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Listado de Proveedores</h4>
+                  <table id="tablaProveedores" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                </table>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:./partials/_footer.html -->
+          <footer class="footer">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between py-2">
+                  <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Prueba Tecnica a
+                    desarrollar</span>
+                  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Realizada para Adres -
+                    Brahyan
+                    Steven Marquez</span>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/autofill/2.7.0/js/dataTables.autoFill.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/colreorder/2.0.0/js/dataTables.colReorder.min.js"></script>
+<script src="https://cdn.datatables.net/datetime/1.5.2/js/dataTables.dateTime.min.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/scroller/2.4.1/js/dataTables.scroller.min.js"></script>
+<script src="https://cdn.datatables.net/searchbuilder/1.7.0/js/dataTables.searchBuilder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
+<script src="./js/proveedores.js"></script>
+    
+
+
+
+</body>
+
+</html>
