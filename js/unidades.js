@@ -1,6 +1,6 @@
 
 const api = "http://localhost/apiadres/public/"
-const ruta =  "proveedores"
+const ruta =  "unidades"
 const host = api+ruta
 
 function cargar(id, nombre) {
@@ -80,7 +80,7 @@ $("#guardar").click(function () {
           icon: "success",
         });
 
-        $("#tablaProveedores")
+        $("#tablaUnidades")
           .DataTable()
           .row.add({
             id: response.data.id,
@@ -165,12 +165,12 @@ $("#modificar").click(function () {
 });
 
 function cargarTabla() {
-  $("#tablaProveedores").DataTable().ajax.reload();
+  $("#tablaUnidades").DataTable().ajax.reload();
 }
 
 $(document).ready(function () {
   $("#modificar").hide();
-  $("#tablaProveedores").DataTable({
+  $("#tablaUnidades").DataTable({
     dom: "Bfrtip",
     responsive: true,
     language: {

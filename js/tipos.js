@@ -1,11 +1,13 @@
 
 const api = "http://localhost/apiadres/public/"
-const ruta =  "proveedores"
+const ruta =  "tipos"
 const host = api+ruta
 
-function cargar(id, nombre) {
+function cargar(id, nombre,tipo) {
+    
   $("#codigo").val(id);
   $("#nombre").val(nombre);
+  $("#tipo").val(tipo);
   $("#modificar").show();
   $("#guardar").hide();
 }
@@ -54,6 +56,7 @@ $("#limpiar").click(function () {
 $("#guardar").click(function () {
   let codigo = $("#codigo").val();
   let nombre = $("#nombre").val();
+  let tipo = $("#tipo").val();
 
   if (nombre.trim() == "") {
     Swal.fire({
@@ -62,11 +65,12 @@ $("#guardar").click(function () {
       icon: "info",
     });
   } else {
-    console.log("codigo: " + codigo + ", Nombre: " + nombre);
+    console.log("codigo: " + codigo + ", Nombre: " + nombre+ ", Tipo: " + tipo);
 
     let datos = {
       codigo: codigo,
       nombre: nombre,
+      categoria:tipo
     };
 
     $.ajax({
@@ -80,11 +84,12 @@ $("#guardar").click(function () {
           icon: "success",
         });
 
-        $("#tablaProveedores")
+        $("#tablaTipos")
           .DataTable()
           .row.add({
             id: response.data.id,
             nombre: response.data.nombre,
+            categoria: response.data.categoria,
             created_at: response.data.created_at,
             updated_at: response.data.updated_at,
           })
@@ -119,6 +124,7 @@ $("#guardar").click(function () {
 $("#modificar").click(function () {
   let codigo = $("#codigo").val();
   let nombre = $("#nombre").val();
+  let tipo = $("#tipo").val();
 
   if (codigo.trim() == "") {
     Swal.fire({
@@ -136,6 +142,7 @@ $("#modificar").click(function () {
     let datos = {
       codigo: codigo,
       nombre: nombre,
+      categoria: tipo,
     };
 
     $.ajax({
@@ -165,12 +172,12 @@ $("#modificar").click(function () {
 });
 
 function cargarTabla() {
-  $("#tablaProveedores").DataTable().ajax.reload();
+  $("#tablaTipos").DataTable().ajax.reload();
 }
 
 $(document).ready(function () {
   $("#modificar").hide();
-  $("#tablaProveedores").DataTable({
+  $("#tablaTipos").DataTable({
     dom: "Bfrtip",
     responsive: true,
     language: {
@@ -182,19 +189,24 @@ $(document).ready(function () {
     columns: [
       { data: "id" },
       { data: "nombre" },
+      { data: "categoria" },
       {
         data: null,
         render: function (data, type, full, meta) {
           return (
-            '<button class ="btn btn-info" onclick="cargar(' +
+            '<button class ="btn btn-info" onclick="cargar(\'' +
             data.id +
-            ", '" +
+            "', '" +
             data.nombre +
+            "', '" +
+            data.categoria +
             '\')"><i class="mdi mdi-magnify mdi-size-lg" style="font-size: 20px;"></i></button>' +
-            '<button class ="btn btn-danger" onclick="eliminar(' +
+            '<button class ="btn btn-danger" onclick="eliminar(\'' +
             data.id +
-            ", '" +
+            "', '" +
             data.nombre +
+            "', '" +
+            data.categoria +
             '\')"><i class="mdi mdi-delete mdi-size-lg" style="font-size: 20px;"></i></button>'
           );
         },

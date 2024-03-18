@@ -47,7 +47,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="unidades.html" >
+          <a class="nav-link" href="unidad.html" >
             <i class="mdi mdi mdi mdi-sitemap  menu-icon"></i>
             <span class="menu-title">Unidad</span>
           </a>
@@ -112,7 +112,7 @@
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Proveedores</h4>
+                  <h4 class="card-title">Tipos</h4>
                   <p class="card-description">
                     Este formulario permite Guardar y Actualizar 
                   </p>
@@ -126,7 +126,13 @@
                       <label for="nombre">Nombre</label>
                       <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre"
                         aria-label="Nombre" >
-                       
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">Tipo</label>
+                      <select class="form-select form-control-sm" id="tipo" > 
+                            <option value="Bien">Bien</option>
+                            <option value="Servicio">Servicio</option>
+                      </select>    
                     </div>
                     
                     <button type="button" id="guardar" class="btn btn-success me-2 ">Guardar <i class="mdi mdi-content-save" ></i></button>
@@ -141,12 +147,13 @@
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Listado de Proveedores</h4>
-                  <table id="tablaProveedores" class="display" style="width:100%">
+                  <h4 class="card-title">Listado de Tipos</h4>
+                  <table id="tablaTipos" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Codigo</th>
                             <th>Nombre</th>
+                            <th>Categoria</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
@@ -175,10 +182,10 @@
       </div>
     </div>
 
-    <script src="./vendors/js/vendor.bundle.base.js"></script>
-    <script src="./js/off-canvas.js"></script>
-    <script src="./js/template.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./vendors/js/vendor.bundle.base.js"></script>
+<script src="./js/off-canvas.js"></script>
+<script src="./js/template.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
@@ -196,7 +203,7 @@
 <script src="https://cdn.datatables.net/scroller/2.4.1/js/dataTables.scroller.min.js"></script>
 <script src="https://cdn.datatables.net/searchbuilder/1.7.0/js/dataTables.searchBuilder.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
-<script src="./js/proveedores.js"></script>
+<script src="./js/tipos.js"></script>
     
 
 
