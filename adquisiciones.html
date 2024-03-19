@@ -112,7 +112,7 @@
             <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Tipos</h4>
+                  <h4 class="card-title">Adquisiciones</h4>
                   <p class="card-description">
                     Este formulario permite Guardar y Actualizar 
                   </p>
@@ -123,17 +123,55 @@
                         aria-label="Codigo">
                     </div>
                     <div class="form-group">
-                      <label for="nombre">Nombre</label>
-                      <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre"
-                        aria-label="Nombre" >
+                      <label for="presupuesto">Presupuesto</label>
+                      <input type="number" class="form-control form-control-sm" id="presupuesto" placeholder="Presupuesto"
+                        aria-label="presupuesto" >
                     </div>
                     <div class="form-group">
-                      <label for="tipo">Tipo</label>
-                      <select class="form-select form-control-sm" id="tipo" > 
-                            <option value="Bien">Bien</option>
-                            <option value="Servicio">Servicio</option>
+                      <label for="unidad">Unidad</label>
+                      <select class="form-select form-control-sm" id="unidad" > 
                       </select>    
                     </div>
+                    <div class="form-group">
+                      <label for="tipo">Tipo de Bien o Servicio</label>
+                      <select class="form-select form-control-sm" id="tipo"> 
+                      </select>    
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control form-control-sm" id="cantidad" placeholder="cantidad"
+                          aria-label="cantidad" >
+                      </div>
+                    <div class="form-group">
+                        <label for="valor_unitario">Valor Unitario</label>
+                        <input type="number" class="form-control form-control-sm" id="valor_unitario" placeholder="Valor unitario"
+                          aria-label="valor_unitario" >
+                      </div>
+                    <div class="form-group">
+                        <label for="valor_total">Valor Total</label>
+                        <input type="number" class="form-control form-control-sm" id="valor_total" placeholder="Valor Total"
+                          aria-label="valor_total" disabled>
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="fecha">Fecha Adquisición</label>
+                        <input type="date" class="form-control form-control-sm" id="fecha" placeholder="fecha"
+                          aria-label="fecha" >
+                      </div>
+
+                      <div class="form-group">
+                        <label for="proveedor">Proveedor</label>
+                        <select class="form-select form-control-sm" id="proveedor" > 
+                        </select>    
+                      </div>
+
+                      <div class="form-group">
+                        <label for="documentacion">Documentación</label>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="documentacion" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Documentación</label>
+                          </div>
+                      </div>
                     
                     <button type="button" id="guardar" class="btn btn-success me-2 ">Guardar <i class="mdi mdi-content-save" ></i></button>
                     <button type="button" id="modificar" class="btn btn-primary me-2 ">Modificar <i class="mdi mdi-pencil"></i></button>
@@ -147,13 +185,19 @@
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Listado de Tipos</h4>
-                  <table id="tablaTipos" class="display" style="width:100%">
+                  <h4 class="card-title">Listado de Adquisiciones</h4>
+                  <table id="tablaAdquisiciones" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Categoria</th>
+                            <th>Presupuesto</th>
+                            <th>Fecha Adquisición</th>
+                            <th>valor_unitario</th>
+                            <th>cantidad</th>
+                            <th>valor_total</th>
+                            <th>Unidad</th>
+                            <th>Tipo</th>
+                            <th>Proveedor</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
@@ -203,7 +247,7 @@
 <script src="https://cdn.datatables.net/scroller/2.4.1/js/dataTables.scroller.min.js"></script>
 <script src="https://cdn.datatables.net/searchbuilder/1.7.0/js/dataTables.searchBuilder.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
-<script src="./js/tipos.js"></script>
+<script src="./js/adquisiciones.js"></script>
     
 
 

@@ -85,18 +85,32 @@
         $(body).addClass('navbar-fixed-top');
       } 
     });  
-    if ($.cookie('spica-free-banner')!="true") {
-      document.querySelector('#proBanner').classList.add('d-flex');
+
+    try {
+      if ($.cookie('spica-free-banner')!="true") {
+        document.querySelector('#proBanner').classList.add('d-flex');
+      }
+      else {
+        document.querySelector('#proBanner').classList.add('d-none');
+      }
+      
+    } catch (error) {
+      
     }
-    else {
-      document.querySelector('#proBanner').classList.add('d-none');
+
+    try {
+      
+      document.querySelector('#bannerClose').addEventListener('click',function() {
+        document.querySelector('#proBanner').classList.add('d-none');
+        document.querySelector('#proBanner').classList.remove('d-flex');
+        var date = new Date();
+        date.setTime(date.getTime() + 24 * 60 * 60 * 1000); 
+        $.cookie('spica-free-banner', "true", { expires: date });
+      });
+    } catch (error) {
+      
     }
-    document.querySelector('#bannerClose').addEventListener('click',function() {
-      document.querySelector('#proBanner').classList.add('d-none');
-      document.querySelector('#proBanner').classList.remove('d-flex');
-      var date = new Date();
-      date.setTime(date.getTime() + 24 * 60 * 60 * 1000); 
-      $.cookie('spica-free-banner', "true", { expires: date });
-    });
+
+
   });
 })(jQuery);
