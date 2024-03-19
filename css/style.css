@@ -22300,3 +22300,18 @@ dl li {
 .letra_titulo{
   color: #263658;
 }
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporción de aspecto 16:9 (9 / 16 = 0.5625) */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -6,17 +6,6 @@
   <title>Adres Admin</title>
   <link rel="stylesheet" href="./vendors/mdi/css/materialdesignicons.min.css">
   <link rel="shortcut icon" href="./images/favicon.png" />
-  <link href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/autofill/2.7.0/css/autoFill.dataTables.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/colreorder/2.0.0/css/colReorder.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/datetime/1.5.2/css/dataTables.dateTime.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/fixedcolumns/5.0.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/scroller/2.4.1/css/scroller.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/searchbuilder/1.7.0/css/searchBuilder.dataTables.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -105,52 +94,16 @@
 
       </nav>
       <!-- partial -->
-      <div class="main-panel">
+      <div class="container">
         <div class="content-wrapper">
-          <div id="contenedor"></div>
           <div class="row">
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card" >
                 <div class="card-body">
-                  <h4 class="card-title">Proveedores</h4>
-                  <p class="card-description">
-                    Este formulario permite Guardar y Actualizar 
-                  </p>
-                  <form class="forms-sample needs-validation" novalidate>
-                    <div class="form-group" style="display: none;">
-                      <label for="codigo">Codigo</label>
-                      <input type="hidden" disabled class="form-control form-control-sm" id="codigo" placeholder="Codigo"
-                        aria-label="Codigo">
-                    </div>
-                    <div class="form-group">
-                      <label for="nombre">Nombre</label>
-                      <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre"
-                        aria-label="Nombre" >
-                       
-                    </div>
-                    
-                    <button type="button" id="guardar" class="btn btn-success me-2 ">Guardar <i class="mdi mdi-content-save" ></i></button>
-                    <button type="button" id="modificar" class="btn btn-primary me-2 ">Modificar <i class="mdi mdi-pencil"></i></button>
-                    <button type="button" id="limpiar" class="btn btn-warning">Limpiar <i class="mdi mdi-broom"></i></button>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-md-8 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Listado de Proveedores</h4>
-                  <table id="tablaProveedores" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Codigo</th>
-                            <th>Nombre</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                </table>
+                  <h4 class="card-title">Información de Adres Prueba Tecnica</h4>
+                  <div class="iframe-container">
+                    <iframe class="col-lg-12 col-md-12" style="height: 50em;" src="./doc/Prueba Técnica para Desarrollador - ADRES.pdf" frameborder="0" allowfullscreen ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
@@ -178,25 +131,7 @@
     <script src="./vendors/js/vendor.bundle.base.js"></script>
     <script src="./js/off-canvas.js"></script>
     <script src="./js/template.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/autofill/2.7.0/js/dataTables.autoFill.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.colVis.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
-<script src="https://cdn.datatables.net/colreorder/2.0.0/js/dataTables.colReorder.min.js"></script>
-<script src="https://cdn.datatables.net/datetime/1.5.2/js/dataTables.dateTime.min.js"></script>
-<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.min.js"></script>
-<script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/scroller/2.4.1/js/dataTables.scroller.min.js"></script>
-<script src="https://cdn.datatables.net/searchbuilder/1.7.0/js/dataTables.searchBuilder.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
-<script src="./js/proveedores.js"></script>
+
     
 
 
