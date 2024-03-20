@@ -144,13 +144,14 @@ $("#guardar").click(function () {
       "proveedor_id": parseInt(proveedor)
     };
 
-    //console.log(datos);
+    console.log(datos);
     $.ajax({
       url: host,
       method: "POST",
       contentType: 'application/json',
       data: JSON.stringify(datos),
       success: function (response) {
+        console.log(response);
         Swal.fire({
           title: "Bien!",
           text: response.message,
