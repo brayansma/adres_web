@@ -1,0 +1,768 @@
+openapi: 3.0.0
+info:
+  title: Documentación de la API de Adres
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1/apiadres/public
+paths:
+  /adquisiciones:
+    get:
+      summary: Obtener todas las adquisiciones
+      tags:
+        - Adquisiciones
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adquisicion'
+    post:
+      summary: Crear una nueva adquisición
+      tags:
+        - Adquisiciones
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adquisicion'
+      responses:
+        '201':
+          description: Adquisición creada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisición creada correctamente
+                  data:
+                    $ref: '#/components/schemas/Adquisicion'
+        '422':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /adquisiciones/{id}:
+    get:
+      summary: Obtener una adquisición específica
+      tags:
+        - Adquisiciones
+      parameters:
+        - name: id
+          in: path
+          description: ID de la adquisición
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adquisicion'
+        '404':
+          description: Adquisición no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisicion no encontrado
+    put:
+      summary: Actualizar una adquisición existente
+      tags:
+        - Adquisiciones
+      parameters:
+        - name: id
+          in: path
+          description: ID de la adquisición
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adquisicion'
+      responses:
+        '200':
+          description: Adquisición actualizada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisición Actualizada correctamente
+                  data:
+                    $ref: '#/components/schemas/Adquisicion'
+        '404':
+          description: Adquisición no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisicion no encontrado
+        '422':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+    delete:
+      summary: Eliminar una adquisición
+      tags:
+        - Adquisiciones
+      parameters:
+        - name: id
+          in: path
+          description: ID de la adquisición
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Adquisición eliminada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisicion eliminada correctamente
+        '404':
+          description: Adquisición no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisicion no encontrado
+  /adquisiciones/{id}/restore:
+    patch:
+      summary: Restaurar una adquisición eliminada
+      tags:
+        - Adquisiciones
+      parameters:
+        - name: id
+          in: path
+          description: ID de la adquisición
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Adquisición restaurada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: adquisicion restaurada correctamente
+                  data:
+                    $ref: '#/components/schemas/Adquisicion'
+        '404':
+          description: Adquisición no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Adquisicion no encontrado
+  /tipos:
+    get:
+      summary: Obtener todos los tipos
+      tags:
+        - Tipos
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tipo'
+    post:
+      summary: Crear un nuevo tipo
+      tags:
+        - Tipos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tipo'
+      responses:
+        '201':
+          description: Tipo creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo creado correctamente
+                  data:
+                    $ref: '#/components/schemas/Tipo'
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /tipos/{id}:
+    get:
+      summary: Obtener un tipo específico
+      tags:
+        - Tipos
+      parameters:
+        - name: id
+          in: path
+          description: ID del tipo
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tipo'
+        '404':
+          description: Tipo no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo no encontrado
+    put:
+      summary: Actualizar un tipo existente
+      tags:
+        - Tipos
+      parameters:
+        - name: id
+          in: path
+          description: ID del tipo
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tipo'
+      responses:
+        '200':
+          description: Tipo actualizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo actualizado correctamente
+                  data:
+                    $ref: '#/components/schemas/Tipo'
+        '404':
+          description: Tipo no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo no encontrado
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+    delete:
+      summary: Eliminar un tipo
+      tags:
+        - Tipos
+      parameters:
+        - name: id
+          in: path
+          description: ID del tipo
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tipo eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo eliminado correctamente
+        '404':
+          description: Tipo no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo no encontrado
+  /tipos/{id}/restore:
+    patch:
+      summary: Restaurar un tipo eliminado
+      tags:
+        - Tipos
+      parameters:
+        - name: id
+          in: path
+          description: ID del tipo
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tipo restaurado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tipo restaurado correctamente
+                  data:
+                    $ref: '#/components/schemas/Tipo'
+  /proveedores:
+    get:
+      summary: Obtener todos los Proveedores
+      tags:
+        - Proveedores
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Proveedor'
+    post:
+      summary: Crear un nuevo Proveedor
+      tags:
+        - Proveedores
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Proveedor'
+      responses:
+        '201':
+          description: Proveedor creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor creado correctamente
+                  data:
+                    $ref: '#/components/schemas/Proveedor'
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /proveedores/{id}:
+    get:
+      summary: Obtener un proveedor específico
+      tags:
+        - Proveedores
+      parameters:
+        - name: id
+          in: path
+          description: ID del proveedor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Proveedor'
+        '404':
+          description: Proveedor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor no encontrado
+    put:
+      summary: Actualizar un proveedor existente
+      tags:
+        - Proveedores
+      parameters:
+        - name: id
+          in: path
+          description: ID del Proveedor
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Proveedor'
+      responses:
+        '200':
+          description: Proveedor actualizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor actualizado correctamente
+                  data:
+                    $ref: '#/components/schemas/Proveedor'
+        '404':
+          description: Proveedor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor no encontrado
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+    delete:
+      summary: Eliminar un Proveedor
+      tags:
+        - Proveedores
+      parameters:
+        - name: id
+          in: path
+          description: ID del proveedor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Proveedor eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor eliminado correctamente
+        '404':
+          description: Proveedor no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor no encontrado
+  /proveedores/{id}/restore:
+    patch:
+      summary: Restaurar un proveedor eliminado
+      tags:
+        - Proveedores
+      parameters:
+        - name: id
+          in: path
+          description: ID del proveedor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Proveedor restaurado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Proveedor restaurado correctamente
+                  data:
+                    $ref: '#/components/schemas/Proveedor'
+  /unidades:
+    get:
+      summary: Obtener todos las Unidades
+      tags:
+        - Unidades
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Unidad'
+    post:
+      summary: Crear un nuevo Unidad
+      tags:
+        - Unidades
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Unidad'
+      responses:
+        '201':
+          description: Unidad creado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad creado correctamente
+                  data:
+                    $ref: '#/components/schemas/Unidad'
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+  /unidades/{id}:
+    get:
+      summary: Obtener unidad específico
+      tags:
+        - Unidades
+      parameters:
+        - name: id
+          in: path
+          description: ID del unidad
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unidad'
+        '404':
+          description: Unidad no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad no encontrado
+    put:
+      summary: Actualizar un unidad existente
+      tags:
+        - Unidades
+      parameters:
+        - name: id
+          in: path
+          description: ID de la Unidad
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Unidad'
+      responses:
+        '200':
+          description: Unidad actualizado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad actualizado correctamente
+                  data:
+                    $ref: '#/components/schemas/Unidad'
+        '404':
+          description: Unidad no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad no encontrado
+        '400':
+          description: Error de validación
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+    delete:
+      summary: Eliminar un Unidad
+      tags:
+        - Unidades
+      parameters:
+        - name: id
+          in: path
+          description: ID del Unidad
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Unidad eliminado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad eliminado correctamente
+        '404':
+          description: Unidad no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad no encontrado
+  /unidades/{id}/restore:
+    patch:
+      summary: Restaurar una unidad eliminado
+      tags:
+        - Unidades
+      parameters:
+        - name: id
+          in: path
+          description: ID del unidad
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Unidad restaurado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Unidad restaurado correctamente
+                  data:
+                    $ref: '#/components/schemas/Unidad'
+components:
+  schemas:
+    Adquisicion:
+      type: object
+      properties:
+        presupuesto:
+          type: number
+        valor_unitario:
+          type: number
+        valor_total:
+          type: number
+        fecha_adquisicion:
+          type: string
+          format: date
+        cantidad:
+          type: integer
+        unidad_id:
+          type: integer
+        tipo_id:
+          type: integer
+        documentacion:
+          type: string
+        proveedor_id:
+          type: integer
+    Tipo:
+      type: object
+      properties:
+        nombre:
+          type: string
+        categoria:
+          type: string
+          enum: [Bien, Servicio]
+    Proveedor:
+      type: object
+      properties:
+        nombre:
+          type: string
+    Unidad:
+      type: object
+      properties:
+        nombre:
+          type: string
+    ValidationError:
+      type: object
+      properties:
+        errors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
